@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:test # test 패키지에서는 test 내에 있는 yml이 우선권을 가지므로, 이 yml을 설정파일로 진행하게 된다. 따라서 이 설정파일을 메모리로 진행하게 하면, 테스트도 메모리에서 진행된다.
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        # show_sql: true
+        format_sql: true
+
+logging.level:
+  org.hibernate.SQL: debug
+  org.hibernate.type: trace #스프링 부트 2.x, hibernate5
+    # org.hibernate.orm.jdbc.bind: trace #스프링 부트 3.x, hibernate6
